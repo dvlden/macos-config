@@ -1,0 +1,18 @@
+# Custom paths
+PATH=/usr/local/sbin:$PATH
+PATH=$HOME/.spark-installer:$PATH
+PATH=`yarn global bin`:$PATH
+PATH=$HOME/.composer/vendor/bin:$PATH
+
+# Set default editor
+export EDITOR='subl -w'
+
+# Load my aliases
+if [ -f ~/.aliases ]; then
+    . ~/.aliases
+fi
+
+# Load my functions
+if [ -f ~/.functions ]; then
+    . ~/.functions
+fi

@@ -1,0 +1,62 @@
+#!/usr/bin/env bash
+
+### DIRECTORY SETUP
+# Get the .dot directory's absolute path
+SCRIPT_DIR="$(cd "$(dirname "$0")"; pwd -P)"
+DOT_DIR="$(dirname "$SCRIPT_DIR")"
+
+dir=~/.dot
+
+# Get current dir (so run this script from anywhere)
+export DOT_DIR
+DOT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+# Change to the dotfiles directory
+echo "Changing to the $dir directory..."
+cd $dir
+
+### Include functions
+source "$dir/lib/functions.sh"
+
+### Ask for confirmation
+while true; do
+    ask_for_confirmation "Warning: This shell will overwrite your current workspace setup. Proceed?"
+    case $REPLY in
+        [Yy]* ) break;;
+        [Nn]* ) exit;;
+        * ) echo "Please answer, yes or no"
+    esac
+done
+
+### ORDER IS IMPORTANT ###
+
+# I. Install Xcode or skip if installed
+sh "$dir/xcode/xcode.sh"
+
+# II. Install Homebrew, Cask apps & Mas apps or update, upgrade & cleanup
+sh "$dir/Homebrew/brew.sh"
+
+# III. Install oh-my-zsh, symlink my config and inject my-config in `.zshrc`
+sh "$dir/zsh/zsh.sh"
+
+# IV. Install Sublime-Text, symlink binary, install package-control and packages
+sh "$dir/sublime-text/init.sh"
+
+# V. PHP Configuration
+sh "$dir/php/init.sh"
+
+# VI. Setup macOS defaults as desired
+sh "$dir/osx.sh"
+
+# VII. Symlinking
+declare -a FILES_TO_SYMLINK=(
+    'symlinks/aliases.symlink'
+    'symlinks/functions.symlink'
+    'symlinks/gitconfig.symlink'
+    'symlinks/gitignore_global.symlink'
+)
+
+symlinkDot ${FILES_TO_SYMLINK[@]}
+
+# VIII. Reload zsh settings
+source ~/.zshrc

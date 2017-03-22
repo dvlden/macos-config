@@ -1,0 +1,54 @@
+# Sources
+tap 'homebrew/core'
+tap 'homebrew/bundle'
+tap 'caskroom/cask'
+tap 'homebrew/dupes'
+tap 'homebrew/versions'
+tap 'homebrew/php'
+tap 'homebrew/apache'
+
+# Utilities
+brew 'composer'
+brew 'dnsmasq'
+brew 'git'
+brew 'httpd24'
+brew 'mas'
+brew 'mysql'
+brew 'node'
+brew 'php71', args: ['with-httpd24']
+brew 'php71-mcrypt'
+brew 'php71-xdebug'
+brew 'python3'
+brew 'redis'
+brew 'sqlite'
+brew 'unrar'
+brew 'yarn'
+brew 'zsh'
+brew 'zsh-completions'
+
+# Apps from web
+cask '1password'
+cask 'alfred'
+cask 'dropbox'
+cask 'gitkraken'
+cask 'phpstorm'
+cask 'postman'
+cask 'razer-synapse'
+cask 'screenhero'
+cask 'sequel-pro'
+cask 'skype'
+cask 'spotify'
+cask 'sublime-text'
+cask 'teamviewer'
+
+# Apps from AppStore
+mas '1Password', id: 443987910
+mas 'Bear', id: 1091189122
+mas 'iA Writer', id: 775737590
+mas 'Magnet', id: 441258766
+mas 'Medis', id: 1063631769
+mas 'Paste', id: 967805235
+mas 'Pixelmator', id: 407963104
+mas 'Screenflow', id: 1107828211
+mas 'Transmit', id: 403388562
+mas 'WinZip', id: 583827028

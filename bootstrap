@@ -32,22 +32,22 @@ done
 # *********************************************
 
 ### Install Xcode or skip if installed
-# sh "$dir/xcode/init.sh"
+sh "$dir/xcode/init.sh"
 
 ### Install Homebrew, Cask apps & Mas apps or update, upgrade & cleanup
-# sh "$dir/Homebrew/brew.sh"
+sh "$dir/Homebrew/brew.sh"
 
 ### Setup Apache
-# sh "$dir/apache/init.sh"
+sh "$dir/apache/init.sh"
 
 ### Install oh-my-zsh, symlink my config and inject my-config in `.zshrc`
-# sh "$dir/zsh/init.sh"
+sh "$dir/zsh/init.sh"
 
 ### Install Sublime-Text, symlink binary, install package-control and packages
 sh "$dir/sublime-text/init.sh"
 
 ### PHP Configuration
-# sh "$dir/php/init.sh"
+sh "$dir/php/init.sh"
 
 ### Symlinking
 declare -a FILES_TO_SYMLINK=(
@@ -60,4 +60,4 @@ declare -a FILES_TO_SYMLINK=(
 symlinkDot ${FILES_TO_SYMLINK[@]}
 
 ### Setup macOS defaults as desired
-# sh "$dir/osx.sh"
+sh "$dir/osx.sh"

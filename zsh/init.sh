@@ -17,3 +17,6 @@ if [ -f ~/.my-zshrc ]; then
     . ~/.my-zshrc
 fi" >> "$HOME/.zshrc"
 fi
+
+### Reload zshell
+exec zsh

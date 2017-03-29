@@ -1,18 +1,17 @@
 #!/usr/bin/env bash
 
-### DIRECTORY SETUP
-# Get the .dot directory's absolute path
+### Get the .dot directory's absolute path
 SCRIPT_DIR="$(cd "$(dirname "$0")"; pwd -P)"
 DOT_DIR="$(dirname "$SCRIPT_DIR")"
 
 dir=~/.dot
 
-# Get current dir (so run this script from anywhere)
+### Get current dir (so run this script from anywhere)
 export DOT_DIR
 DOT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-# Change to the dotfiles directory
-echo "Changing to the $dir directory..."
+### Change to the dotfiles directory
+echo "Changing directory to '$dir'..."
 cd $dir
 
 ### Include functions
@@ -28,27 +27,29 @@ while true; do
     esac
 done
 
-### ORDER IS IMPORTANT ###
+# *********************************************
+# ************ ORDER IS IMPORTANT! ************
+# *********************************************
 
-# I. Install Xcode or skip if installed
-sh "$dir/xcode/xcode.sh"
+### Install Xcode or skip if installed
+# sh "$dir/xcode/init.sh"
 
-# II. Install Homebrew, Cask apps & Mas apps or update, upgrade & cleanup
-sh "$dir/Homebrew/brew.sh"
+### Install Homebrew, Cask apps & Mas apps or update, upgrade & cleanup
+# sh "$dir/Homebrew/brew.sh"
 
-# III. Install oh-my-zsh, symlink my config and inject my-config in `.zshrc`
-sh "$dir/zsh/zsh.sh"
+### Setup Apache
+# sh "$dir/apache/init.sh"
 
-# IV. Install Sublime-Text, symlink binary, install package-control and packages
+### Install oh-my-zsh, symlink my config and inject my-config in `.zshrc`
+# sh "$dir/zsh/init.sh"
+
+### Install Sublime-Text, symlink binary, install package-control and packages
 sh "$dir/sublime-text/init.sh"
 
-# V. PHP Configuration
-sh "$dir/php/init.sh"
+### PHP Configuration
+# sh "$dir/php/init.sh"
 
-# VI. Setup macOS defaults as desired
-sh "$dir/osx.sh"
-
-# VII. Symlinking
+### Symlinking
 declare -a FILES_TO_SYMLINK=(
     'symlinks/aliases.symlink'
     'symlinks/functions.symlink'
@@ -58,5 +59,5 @@ declare -a FILES_TO_SYMLINK=(
 
 symlinkDot ${FILES_TO_SYMLINK[@]}
 
-# VIII. Reload zsh settings
-source ~/.zshrc
+### Setup macOS defaults as desired
+# sh "$dir/osx.sh"

@@ -1,17 +1,19 @@
+# OCD HITS: EVERYTHING SORTED IN ALPHABETICAL ORDER!
+
 # Sources
-tap 'homebrew/core'
-tap 'homebrew/bundle'
 tap 'caskroom/cask'
-tap 'homebrew/dupes'
-tap 'homebrew/versions'
-tap 'homebrew/php'
 tap 'homebrew/apache'
+tap 'homebrew/bundle'
+tap 'homebrew/core'
+tap 'homebrew/dupes'
+tap 'homebrew/php'
+tap 'homebrew/versions'
 
 # Utilities
 brew 'composer'
 brew 'dnsmasq'
 brew 'git'
-brew 'httpd24'
+brew 'httpd24', args: ['with-privileged-ports', 'with-http2']
 brew 'mas'
 brew 'mysql'
 brew 'node'
@@ -26,22 +28,22 @@ brew 'yarn'
 brew 'zsh'
 brew 'zsh-completions'
 
-# Apps from web
-cask '1password'
+# Apps from "Web"
 cask 'alfred'
 cask 'dropbox'
-cask 'gitkraken'
+# cask 'gitkraken'
+cask 'google-chrome'
 cask 'phpstorm'
 cask 'postman'
 cask 'razer-synapse'
-cask 'screenhero'
+# cask 'screenhero'
 cask 'sequel-pro'
 cask 'skype'
 cask 'spotify'
 cask 'sublime-text'
-cask 'teamviewer'
+# cask 'teamviewer'
 
-# Apps from AppStore
+# Apps from "App Store"
 mas '1Password', id: 443987910
 mas 'Bear', id: 1091189122
 mas 'iA Writer', id: 775737590

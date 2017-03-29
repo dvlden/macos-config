@@ -35,7 +35,7 @@
   "scroll_speed": 2,
   "shift_tab_unindent": true,
   "show_full_path": false,
-  "tab_size": 4,
+  "tab_size": 2,
   "theme": "Material-Theme.sublime-theme",
   "translate_tabs_to_spaces": true,
   "trim_trailing_white_space_on_save": true,

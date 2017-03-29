@@ -18,16 +18,14 @@ if [ ! -f "$SUBLIME_PATH/Installed Packages/Package Control.sublime-package" ]; 
 
     echo "Sublime Text: download package-control..."
     # Install Package Control to proper destination
-    curl -o "$SUBLIME_PATH/Installed Packages/Package Control.sublime-package" \
+    curl -o "$(echo $SUBLIME_PATH)/Installed Packages/Package Control.sublime-package" \
             'https://packagecontrol.io/Package Control.sublime-package'
-
-    echo "Sublime Text: symlink package-control..."
-    # Symlink Packages
-    symlinkFromTo "$DOT_DIR/sublime-text/Package Control.sublime-settings" \
-                  "$SUBLIME_PATH/Packages/User/Package Control.sublime-settings"
-
-    echo "Sublime Text: symlink preferences..."
-    # Symlink Preferences
-    symlinkFromTo "$DOT_DIR/sublime-text/Preferences.sublime-settings" \
-                  "$SUBLIME_PATH/Packages/User/Preferences.sublime-settings"
 fi
+
+# Symlink Packages
+symlinkFromTo "$DOT_DIR/sublime-text/Package Control.sublime-settings" \
+              "$SUBLIME_PATH/Packages/User/Package Control.sublime-settings"
+
+# # Symlink Preferences
+symlinkFromTo "$DOT_DIR/sublime-text/Preferences.sublime-settings" \
+              "$SUBLIME_PATH/Packages/User/Preferences.sublime-settings"

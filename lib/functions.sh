@@ -107,17 +107,19 @@ symlinkFromTo() {
     local TO=$2
 
     if [ ! -e "$TO" ]; then
-        execute "ln -fs $FROM $TO" "$FROM → $TO"
+        ln -fs "$FROM" "$TO"
+        print_success "Symlink: $FROM → $TO"
     elif [ "$(readlink "$TO")" == "$FROM" ]; then
-        print_success "Already linked... $FROM → $TO"
+        print_success "Already symlinked: ($FROM → $TO)"
     else
-        ask_for_confirmation "$TO already exists, do you want to overwrite it?"
+        ask_for_confirmation "($TO) already exists, overwrite it?"
 
         if answer_is_yes; then
             rm -rf "$TO"
-            execute "ln -fs $FROM $TO" "$FROM → $TO"
+            ln -fs "$FROM" "$TO"
+            print_success "Symlink: ($FROM → $TO)"
         else
-            print_error "Skipping... $FROM → $TO"
+            print_info "Skipping symlink: ($FROM → $TO)"
         fi
     fi
 }

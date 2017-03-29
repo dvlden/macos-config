@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-ask_for_sudo
-
 ### Get the .dot directory's absolute path
 SCRIPT_DIR="$(cd "$(dirname "$0")"; pwd -P)"
 DOT_DIR="$(dirname "$SCRIPT_DIR")"
@@ -18,6 +16,8 @@ cd $dir
 
 ### Include functions
 source "$dir/lib/functions.sh"
+
+ask_for_sudo
 
 ### Ask for confirmation
 while true; do

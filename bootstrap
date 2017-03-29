@@ -63,3 +63,6 @@ symlinkDot ${FILES_TO_SYMLINK[@]}
 
 ### Setup macOS defaults as desired
 sh "$dir/osx.sh"
+
+### Reload zshell
+exec zsh

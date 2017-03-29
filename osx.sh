@@ -1,10 +1,5 @@
 #!/usr/bin/env bash
 
-### Include functions
-source "$dir/lib/functions.sh"
-
-ask_for_sudo
-
 # Close any open System Preferences panes, to prevent them from overriding
 # settings we’re about to change
 osascript -e 'tell application "System Preferences" to quit'

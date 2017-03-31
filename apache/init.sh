@@ -13,12 +13,8 @@ USER=$(whoami)
 if [ -f $HTTPD_CONF ]; then
     echo 'Apache: Modify "httpd.conf" file...'
 
-    modify_line 'php5_module' \
+    modify_file 'LoadModule rewrite_module' \
         'LoadModule php7_module /usr/local/opt/php71/libexec/apache2/libphp7.so' \
-        $HTTPD_CONF
-
-    modify_line 'DirectoryIndex index.html' \
-        'DirectoryIndex index.php index.html' \
         $HTTPD_CONF
 
     uncomment_line 'rewrite_module' $HTTPD_CONF
@@ -27,25 +23,25 @@ if [ -f $HTTPD_CONF ]; then
 
     uncomment_line 'httpd-vhosts' $HTTPD_CONF
 
-    modify_line 'User _www' \
-        'User nn' \
+    modify_line 'User daemon' \
+        "User $USER" \
         $HTTPD_CONF
 
-    modify_line 'Group _www' \
+    modify_line 'Group daemon' \
         'Group staff' \
         $HTTPD_CONF
 
-    modify_line 'DocumentRoot \"/Library/WebServer/Documents\"' \
-        'DocumentRoot \"/Users/nn/Sites\"' \
+    modify_line '/usr/local/var/www/htdocs' \
+        "/Users/$USER/Sites" \
         $HTTPD_CONF
 
-    modify_line '<Directory \"/Library/WebServer/Documents\">' \
-        '<Directory \"/Users/nn/Sites\">' \
-        $HTTPD_CONF
+    uncomment_line 'ServerName localhost:80' $HTTPD_CONF
 
-    modify_line 'ServerName www.example.com:80' \
-        'ServerName localhost:80' \
-        $HTTPD_CONF
+    # SOME MANUAL STUFF REQUIRED (AT A TIME BEING)
+    # AllowOverride All
+    # <FilesMatch \.php$>
+    #     SetHandler application/x-httpd-php
+    # </FilesMatch>
 fi
 
 echo 'Apache: Rewrite "httpd-vhost.conf" file...'

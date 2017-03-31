@@ -5,9 +5,9 @@ alias path='echo -e ${PATH//:/\\n}'
 
 # Common files for editing
 alias edit_hosts='subl /etc/hosts'
-alias edit_httpd='subl /usr/local/etc/apache2/2.4/httpd.conf'
-alias edit_vhosts='subl /usr/local/etc/apache2/2.4/extras/httpd-vhosts.conf'
-alias edit_php='subl /usr/local/etc/php/7.1/php.ini'
+alias edit_httpd='subl /usr/local/etc/apache2/*/httpd.conf'
+alias edit_vhosts='subl /usr/local/etc/apache2/*/extra/httpd-vhosts.conf'
+alias edit_php='subl /usr/local/etc/php/*/php.ini'
 
 # System
 alias update='mas upgrade; brew cleanup; brew upgrade; brew update; npm install npm -g; npm update -g;'

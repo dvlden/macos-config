@@ -9,7 +9,7 @@ mkdir -p ~/usr/local/bin
 symlinkFromTo "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" "/usr/local/bin/subl"
 
 # Store Path
-SUBLIME_PATH="$HOME/Library/Application Support/Sublime Text 3"
+SUBLIME_PATH=$(echo "$HOME/Library/Application Support/Sublime Text 3")
 
 if [ ! -f "$SUBLIME_PATH/Installed Packages/Package Control.sublime-package" ]; then
     echo "Sublime Text: quit..."
@@ -18,7 +18,7 @@ if [ ! -f "$SUBLIME_PATH/Installed Packages/Package Control.sublime-package" ]; 
 
     echo "Sublime Text: download package-control..."
     # Install Package Control to proper destination
-    curl -o "$(echo $SUBLIME_PATH)/Installed Packages/Package Control.sublime-package" \
+    curl -o "$SUBLIME_PATH/Installed Packages/Package Control.sublime-package" \
             'https://packagecontrol.io/Package Control.sublime-package'
 fi
 

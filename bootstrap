@@ -39,6 +39,9 @@ sh "$dir/xcode/init.sh"
 ### Install Homebrew, Cask apps & Mas apps or update, upgrade & cleanup
 sh "$dir/Homebrew/brew.sh"
 
+### Configure DNSMasq
+sh "$dir/dnsmasq/init.sh"
+
 ### Setup Apache
 sh "$dir/apache/init.sh"
 

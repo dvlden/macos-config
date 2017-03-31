@@ -51,8 +51,11 @@ sh "$dir/zsh/init.sh"
 ### Install Sublime-Text, symlink binary, install package-control and packages
 sh "$dir/sublime-text/init.sh"
 
-### PHP Configuration
+### Php Configuration
 sh "$dir/php/init.sh"
+
+### Git Configuration
+sh "$dir/git/init.sh"
 
 ### Symlinking
 declare -a FILES_TO_SYMLINK=(

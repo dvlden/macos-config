@@ -47,7 +47,6 @@ cask 'sublime-text'
 cask 'transmission'
 # cask 'vanilla'
 cask 'vlc'
-# cask 'teamviewer'
 
 # Apps from "App Store"
 mas '1Password', id: 443987910

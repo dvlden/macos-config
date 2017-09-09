@@ -1,0 +1,11 @@
+<snippet>
+  <!-- Example: Hello, ${1:this} is a ${2:snippet}. -->
+  <content><![CDATA[
+\$this
+]]></content>
+  <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+  <tabTrigger>$</tabTrigger>
+  <description>PHP $this</description>
+  <!-- Optional: Set a scope to limit where the snippet will trigger -->
+  <scope>embedding.php, text.html.basic, meta.embedded.block.php, source.php, meta.class.php, meta.block.php, variable.language.php, punctuation.definition.variable.php</scope>
+</snippet>

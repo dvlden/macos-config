@@ -1,25 +1,30 @@
 {
-	"bootstrapped": true,
-	"in_process_packages":
-	[
-	],
-	"installed_packages":
-	[
-		"AdvancedNewFile",
-		"AutoFileName",
-		"Babel",
-		"BracketHighlighter",
-		"Color Highlighter",
-		"ColorPicker",
-		"Emmet",
-		"JavaScript Completions",
-		"Laravel Blade Highlighter",
-		"Material Theme",
-		"Minify",
-		"Package Control",
-		"Sass",
-		"Terminal",
-		"Vue Syntax Highlight",
-		"WakaTime"
-	]
+  "bootstrapped": true,
+  "in_process_packages": [],
+  "installed_packages": [
+    "AdvancedNewFile",
+    "AutoFileName",
+    "Autoprefixer",
+    "Babel",
+    "BracketHighlighter",
+    "Color Highlighter",
+    "ColorPicker",
+    "DocBlockr",
+    "Emmet",
+    "JavaScript Completions",
+    "Laravel Blade Highlighter",
+    "Markdown Preview",
+    "Material Theme",
+    "Minify",
+    "Package Control",
+    "PHP Companion",
+    "PHP CS Fixer",
+    "Sass",
+    "SnippetMaker",
+    "SublimeCodeIntel",
+    "SublimeLinter",
+    "SublimeLinter-phpcs",
+    "Terminal",
+    "Vue Syntax Highlight"
+  ]
 }

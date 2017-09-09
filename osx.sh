@@ -10,11 +10,9 @@ osascript -e 'tell application "System Preferences" to quit'
 # General UI/UX                                                               #
 ###############################################################################
 
-# Disable the sound effects on boot
-sudo nvram SystemAudioVolume=" "
-
-# Set highlight color to green
-defaults write NSGlobalDomain AppleHighlightColor -string "0.764700 0.976500 0.568600"
+# Set highlight color to custom one
+# https://github.com/mathiasbynens/dotfiles/issues/481
+defaults write NSGlobalDomain AppleHighlightColor -string "0.768289 0.831748 0.823031"
 
 # Scrollbars
 defaults write NSGlobalDomain AppleShowScrollBars -string "WhenScrolling"

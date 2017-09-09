@@ -1,3 +1,12 @@
+# Activate zsh-completions
+fpath=(/usr/local/share/zsh-completions $fpath)
+
+# You may also need to force rebuild `zcompdump`:
+# rm -f ~/.zcompdump; compinit
+# Additionally, if you receive "zsh compinit: insecure directories" warnings when attempting
+# to load these completions, you may need to run this:
+# chmod go-w '/usr/local/share'
+
 # Custom paths
 PATH=/usr/local/sbin:$PATH
 PATH=$HOME/.spark-installer:$PATH
@@ -9,12 +18,12 @@ export EDITOR='subl -w'
 
 # Load my aliases
 if [ -f ~/.aliases ]; then
-    . ~/.aliases
+  . ~/.aliases
 fi
 
 # Load my functions
 if [ -f ~/.functions ]; then
-    . ~/.functions
+  . ~/.functions
 fi
 
 local ret_status="%(?:%{$fg_bold[green]%}▲ :%{$fg_bold[red]%}▲ )"

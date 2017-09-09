@@ -2,6 +2,9 @@
 alias s='cd ~/Sites'
 alias art='php artisan'
 alias path='echo -e ${PATH//:/\\n}'
+alias copy_ssh="pbcopy < $HOME/.ssh/id_rsa.pub"
+alias reload="exec ${SHELL} -l"
+alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
 
 # Common files for editing
 alias edit_hosts='subl /etc/hosts'
@@ -10,16 +13,31 @@ alias edit_vhosts='subl /usr/local/etc/apache2/*/extra/httpd-vhosts.conf'
 alias edit_php='subl /usr/local/etc/php/*/php.ini'
 
 # System
-alias update='mas upgrade; brew cleanup; brew upgrade; brew update; npm install npm -g; npm update -g;'
-alias show="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
-alias hide="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
+alias update='mas upgrade; brew cleanup; brew upgrade; brew update; composer global update; npm install npm -g; npm update -g;'
+alias show_files='defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder'
+alias hide_files='defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder'
+alias show_desktop="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
+alias hide_desktop="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
 
 # IP
-alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias ip='dig +short myip.opendns.com @resolver1.opendns.com'
 
 # NPM
-alias nom='rm -rf node_modules/ && npm cache clean && npm install'
+alias nom='rm -rf node_modules/ && npm cache verify && npm install'
+
+# Github
+alias wip="git add .;git commit -m 'wip'"
+alias nah='git reset --hard;git clean -df'
+
+# Composer
+alias dump='composer dump-autoload -o'
+
+# Chrome
+alias kill_chrome="ps ux | grep '[C]hrome Helper --type=renderer' | grep -v extension-process | tr -s ' ' | cut -d ' ' -f2 | xargs kill"
 
 # Dummy
-alias shrug="printf \"¯\_(ツ)_/¯\" | pbcopy && echo \"¯\_(ツ)_/¯  - Has been copied to clipboard\""
-alias flipt="printf \"(╯°□°)╯︵ ┻━┻\" | pbcopy && echo \"(╯°□°)╯︵ ┻━┻  - Has been copied to cplipboard\""
+alias fucking='sudo'
+alias shrug="printf '¯\_(ツ)_/¯' | pbcopy"
+alias flipt="printf '(╯°□°)╯︵ ┻━┻' | pbcopy"
+alias fight="printf '(ง'̀-'́)ง' | pbcopy"
+

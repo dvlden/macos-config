@@ -2,7 +2,6 @@
 
 ## MISSING / TODO
 - Fully automate Apache configiration (atm part needs to be done manually)
-- Figure if possible how to automate licensing of my paid software
 
 ## Information
 Please, do not use my setup as is. If you want to give it a try, I suggest you to fork my repo first, review the code, change it and tweak it to your needs. Don't just blindly run it, because it may not be something that you want/need.

@@ -1,9 +1,0 @@
-<snippet>
-  <content><![CDATA[
-<script src="https://cdn.unpacker.org/jquery/2.2.4/jquery.min.js"></script>
-<script src="https://cdn.unpacker.org/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-]]></content>
-  <tabTrigger>jmr:js</tabTrigger>
-  <description>Jammer JS Snippets</description>
-  <scope>text.html.basic</scope>
-</snippet>

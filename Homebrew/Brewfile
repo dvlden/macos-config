@@ -36,6 +36,7 @@ cask 'flume'
 # cask 'gitkraken'
 cask 'google-chrome'
 # cask 'iterm2'
+cask 'keepingyouawake'
 cask 'phpstorm'
 cask 'postman'
 # cask 'razer-synapse'
@@ -54,6 +55,7 @@ mas 'Bear', id: 1091189122
 mas 'iA Writer', id: 775737590
 mas 'Magnet', id: 441258766
 mas 'Medis', id: 1063631769
+mas 'Folx GO', id: 736584830
 mas 'Paste', id: 967805235
 mas 'Pixelmator', id: 407963104
 mas 'Screenflow', id: 1107828211

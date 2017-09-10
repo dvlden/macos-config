@@ -7,6 +7,7 @@ symlinkFromTo "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" "
 
 # Store Path
 SUBLIME_PATH=$(echo "$HOME/Library/Application Support/Sublime Text 3")
+CLOUD_PATH=$(echo "$HOME/Library/Mobile Documents/com~apple~CloudDocs/Sublime Text 3")
 
 if [ ! -f "$SUBLIME_PATH/Installed Packages/Package Control.sublime-package" ]; then
   echo "Sublime Text: quit..."
@@ -19,18 +20,8 @@ if [ ! -f "$SUBLIME_PATH/Installed Packages/Package Control.sublime-package" ]; 
           'https://packagecontrol.io/Package Control.sublime-package'
 fi
 
-# Symlink Packages
-symlinkFromTo "$DOT_DIR/sublime-text/Package Control.sublime-settings" \
-              "$SUBLIME_PATH/Packages/User/Package Control.sublime-settings"
+# Remove User folder and then symlink it from iCloud
+rm -rf "$SUBLIME_PATH/Packages/User"
 
-# Symlink Preferences
-symlinkFromTo "$DOT_DIR/sublime-text/Preferences.sublime-settings" \
-              "$SUBLIME_PATH/Packages/User/Preferences.sublime-settings"
-
-# Symlink settings
-symlinkFromTo "$DOT_DIR/sublime-text/settings/" \
-              "$SUBLIME_PATH/Packages/User/"
-
-# Symlink snippets
-symlinkFromTo "$DOT_DIR/sublime-text/snippets/" \
-              "$SUBLIME_PATH/Packages/User/"
+symlinkFromTo "$CLOUD_PATH/User" \
+              "$SUBLIME_PATH/Packages"

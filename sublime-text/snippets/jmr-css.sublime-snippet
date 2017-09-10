@@ -1,9 +1,0 @@
-<snippet>
-  <content><![CDATA[
-<link href="https://cdn.unpacker.org/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-<link href="https://cdn.unpacker.org/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-]]></content>
-  <tabTrigger>jmr:css</tabTrigger>
-  <description>Jammer JS Snippets</description>
-  <scope>text.html.basic</scope>
-</snippet>

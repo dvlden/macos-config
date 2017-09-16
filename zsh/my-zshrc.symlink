@@ -1,5 +1,9 @@
-# Activate zsh-completions
-fpath=(/usr/local/share/zsh-completions $fpath)
+# Load extensions
+source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# Activate plugins
+plugins=(git zsh-completions)
 
 # You may also need to force rebuild `zcompdump`:
 # rm -f ~/.zcompdump; compinit
@@ -7,14 +11,17 @@ fpath=(/usr/local/share/zsh-completions $fpath)
 # to load these completions, you may need to run this:
 # chmod go-w '/usr/local/share'
 
+# Custom vars
+SPARK=$HOME/.spark-installer
+COMPOSER=$HOME/.composer/vendor/bin
+
 # Custom paths
 PATH=/usr/local/sbin:$PATH
-PATH=$HOME/.spark-installer:$PATH
-PATH=`yarn global bin`:$PATH
-PATH=$HOME/.composer/vendor/bin:$PATH
+PATH=$SPARK:$PATH
+PATH=$COMPOSER:$PATH
 
 # Set default editor
-export EDITOR='subl -w'
+EDITOR='subl -w'
 
 # Load my aliases
 if [ -f ~/.aliases ]; then

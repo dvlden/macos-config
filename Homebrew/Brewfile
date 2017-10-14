@@ -1,13 +1,13 @@
 # OCD HITS: EVERYTHING SORTED IN ALPHABETICAL ORDER!
 
 # Sources
+tap 'buo/cask-upgrade'
 tap 'caskroom/cask'
 tap 'homebrew/apache'
 tap 'homebrew/bundle'
 tap 'homebrew/core'
 tap 'homebrew/dupes'
 tap 'homebrew/php'
-tap 'homebrew/versions'
 
 # Utilities
 brew 'composer'
@@ -26,39 +26,40 @@ brew 'sqlite'
 brew 'unrar'
 brew 'yarn'
 brew 'zsh'
+brew 'zsh-autosuggestions'
 brew 'zsh-completions'
+brew 'zsh-syntax-highlighting'
 
 # Apps from "Web"
 cask 'alfred'
 cask 'bartender'
-cask 'dropbox'
 cask 'flume'
-# cask 'gitkraken'
+cask 'fontbase'
+cask 'google-backup-and-sync'
 cask 'google-chrome'
-cask 'hyper'
-# cask 'iterm2'
+cask 'iterm2-nightly'
 cask 'keepingyouawake'
 cask 'phpstorm'
 cask 'postman'
 cask 'razer-synapse'
+cask 'screenflow'
 # cask 'screenhero'
-cask 'sequel-pro'
 cask 'skype'
-cask 'spotify'
 cask 'sublime-text'
+cask 'tableplus'
 cask 'transmission'
-# cask 'vanilla'
 cask 'vlc'
 
 # Apps from "App Store"
 mas '1Password', id: 443987910
 mas 'Bear', id: 1091189122
+mas 'Hourly News', id: 579454852
 mas 'iA Writer', id: 775737590
+mas 'JPEGmini', id: 498944723
 mas 'Magnet', id: 441258766
 mas 'Medis', id: 1063631769
 mas 'Folx GO', id: 736584830
 mas 'Paste', id: 967805235
-mas 'Pixelmator', id: 407963104
-mas 'Screenflow', id: 1107828211
 mas 'Transmit', id: 403388562
+mas 'Unsplash Wallpapers', id: 1284863847
 mas 'WinZip', id: 583827028

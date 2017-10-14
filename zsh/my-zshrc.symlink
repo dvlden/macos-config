@@ -14,11 +14,13 @@ plugins=(git zsh-completions)
 # Custom vars
 SPARK=$HOME/.spark-installer
 COMPOSER=$HOME/.composer/vendor/bin
+LOCAL_NODE_BIN=node_modules/.bin/
 
 # Custom paths
 PATH=/usr/local/sbin:$PATH
 PATH=$SPARK:$PATH
 PATH=$COMPOSER:$PATH
+PATH=$LOCAL_NODE_BIN:$PATH
 
 # Set default editor
 EDITOR='subl -w'

@@ -13,11 +13,13 @@ alias edit_vhosts='subl /usr/local/etc/apache2/*/extra/httpd-vhosts.conf'
 alias edit_php='subl /usr/local/etc/php/*/php.ini'
 
 # System
-alias update='mas upgrade; brew cleanup; brew upgrade; brew update; composer global update; npm install npm -g; npm update -g;'
+alias update='mas upgrade; brew cleanup; brew upgrade; brew update; brew cu -a -y; composer global update; npm update -g; npm install -g npm'
 alias show_files='defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder'
 alias hide_files='defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder'
 alias show_desktop="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
 alias hide_desktop="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
+alias enable_gate="sudo spctl --master-enable"
+alias disable_gate="sudo spctl --master-disable"
 
 # IP
 alias ip='dig +short myip.opendns.com @resolver1.opendns.com'

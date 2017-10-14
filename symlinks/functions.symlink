@@ -3,6 +3,11 @@ function mkd () {
   mkdir -p "$@" && cd "$_";
 }
 
+# Copy site and its contents
+function copy_site () {
+  wget -e robots=off -r -p -k "$1"
+}
+
 # Extract most know archives with one command
 extract () {
   if [ -f $1 ] ; then

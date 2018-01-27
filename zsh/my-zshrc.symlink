@@ -14,7 +14,7 @@ plugins=(git zsh-completions)
 # Custom vars
 SPARK=$HOME/.spark-installer
 COMPOSER=$HOME/.composer/vendor/bin
-LOCAL_NODE_BIN=node_modules/.bin/
+LOCAL_NODE_BIN=node_modules/.bin
 
 # Custom paths
 PATH=/usr/local/sbin:$PATH

@@ -5,16 +5,15 @@ if [ ! -f $(brew --prefix)/etc/dnsmasq.conf ]; then
   cp $(brew list dnsmasq | grep /dnsmasq.conf.example$) /usr/local/etc/dnsmasq.conf
 
   echo 'DNSMasq: add addresses to to "dnsmasq.conf" file...'
-  echo 'address=/.dev/127.0.0.1
-  address=/.app/127.0.0.1' > $(brew --prefix)/etc/dnsmasq.conf
+  echo -e 'address=/.test/127.0.0.1\naddress=/.lara/127.0.0.1' > $(brew --prefix)/etc/dnsmasq.conf
 
   echo 'DNSMasq: start...'
   brew services start dnsmasq
 
   echo 'DNSMasq: add resolvers...'
   sudo mkdir -p /etc/resolver
-  sudo bash -c 'echo "nameserver 127.0.0.1" > /etc/resolver/dev'
-  sudo bash -c 'echo "nameserver 127.0.0.1" > /etc/resolver/app'
+  sudo bash -c 'echo "nameserver 127.0.0.1" > /etc/resolver/test'
+  sudo bash -c 'echo "nameserver 127.0.0.1" > /etc/resolver/lara'
 
   echo 'DNSMasq: restart...'
   brew services restart dnsmasq

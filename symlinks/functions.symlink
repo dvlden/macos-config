@@ -5,6 +5,10 @@ function mkd () {
 
 # Copy site and its contents
 function copy_site () {
+  wget -e robots=off -p -k "$1"
+}
+
+function copy_site_r () {
   wget -e robots=off -r -p -k "$1"
 }
 

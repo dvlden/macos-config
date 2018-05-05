@@ -5,11 +5,14 @@ alias path='echo -e ${PATH//:/\\n}'
 alias copy_ssh="pbcopy < $HOME/.ssh/id_rsa.pub"
 alias reload="exec ${SHELL} -l"
 alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
+alias flush_dns="sudo killall -HUP mDNSResponder"
+alias chdir="find . -type d -exec chmod 755 {} \;"
+alias chfile="find . -type f -exec chmod 644 {} \;"
 
 # Common files for editing
 alias edit_hosts='subl /etc/hosts'
-alias edit_httpd='subl /usr/local/etc/apache2/*/httpd.conf'
-alias edit_vhosts='subl /usr/local/etc/apache2/*/extra/httpd-vhosts.conf'
+alias edit_httpd='subl /usr/local/etc/httpd/httpd.conf'
+alias edit_vhosts='subl /usr/local/etc/httpd/extra/httpd-vhosts.conf'
 alias edit_php='subl /usr/local/etc/php/*/php.ini'
 
 # System
@@ -38,7 +41,6 @@ alias dump='composer dump-autoload -o'
 alias kill_chrome="ps ux | grep '[C]hrome Helper --type=renderer' | grep -v extension-process | tr -s ' ' | cut -d ' ' -f2 | xargs kill"
 
 # Dummy
-alias fucking='sudo'
 alias shrug="printf '¯\_(ツ)_/¯' | pbcopy"
 alias flipt="printf '(╯°□°)╯︵ ┻━┻' | pbcopy"
 alias fight="printf '(ง'̀-'́)ง' | pbcopy"

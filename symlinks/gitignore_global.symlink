@@ -37,8 +37,8 @@ Thumbs.db
 
 # Others #
 ##########
-.sass-cache
-.idea
+/.sass-cache
+/.idea
 composer.lock
-node_modules
-vendor
+/node_modules
+/vendor

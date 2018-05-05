@@ -53,13 +53,13 @@ cat > $(echo $HTTPD_VHOST) <<EOF
 </VirtualHost>
 
 <VirtualHost *:80>
-  ServerAlias *.dev
+  ServerAlias *.test
   UseCanonicalName Off
   VirtualDocumentRoot "/Users/$USER/Sites/%1"
 </VirtualHost>
 
 <VirtualHost *:80>
-  ServerAlias *.app
+  ServerAlias *.lara
   UseCanonicalName Off
   VirtualDocumentRoot "/Users/$USER/Sites/%1/public"
 </VirtualHost>

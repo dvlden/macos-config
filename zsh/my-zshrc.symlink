@@ -5,12 +5,6 @@ source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # Activate plugins
 plugins=(git zsh-completions)
 
-# You may also need to force rebuild `zcompdump`:
-# rm -f ~/.zcompdump; compinit
-# Additionally, if you receive "zsh compinit: insecure directories" warnings when attempting
-# to load these completions, you may need to run this:
-# chmod go-w '/usr/local/share'
-
 # Custom vars
 SPARK=$HOME/.spark-installer
 COMPOSER=$HOME/.composer/vendor/bin

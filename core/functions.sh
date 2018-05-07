@@ -26,54 +26,6 @@ ask_for_sudo() {
   done &> /dev/null &
 }
 
-cmd_exists() {
-  [ -x "$(command -v "$1")" ] \
-    && printf 0 \
-    || printf 1
-}
-
-execute() {
-  $1 &> /dev/null
-  print_result $? "${2:-$1}"
-}
-
-get_answer() {
-  printf "$REPLY"
-}
-
-get_os() {
-  declare -r OS_NAME="$(uname -s)"
-  local os=""
-
-  if [ "$OS_NAME" == "Darwin" ]; then
-    os="osx"
-  elif [ "$OS_NAME" == "Linux" ] && [ -e "/etc/lsb-release" ]; then
-    os="ubuntu"
-  fi
-
-  printf "%s" "$os"
-}
-
-is_git_repository() {
-  [ "$(git rev-parse &>/dev/null; printf $?)" -eq 0 ] \
-    && return 0 \
-    || return 1
-}
-
-mkd() {
-  if [ -n "$1" ]; then
-    if [ -e "$1" ]; then
-      if [ ! -d "$1" ]; then
-        print_error "$1 - a file with the same name already exists!"
-      else
-        print_success "$1"
-      fi
-    else
-      execute "mkdir -p $1" "$1"
-    fi
-  fi
-}
-
 print_info() {
   # Print output in blue
   printf "\n\e[0;34m 👊  $1\e[0m\n"
@@ -93,38 +45,29 @@ print_error() {
   printf "\e[0;31m 😡  $1 $2\e[0m\n"
 }
 
-print_result() {
-  [ $1 -eq 0 ] \
-    && print_success "$2" \
-    || print_error "$2"
-
-  [ "$3" == "true" ] && [ $1 -ne 0 ] \
-    && exit
-}
-
-symlinkFromTo() {
+symlink_from_to() {
   local FROM=$1
   local TO=$2
 
   if [ ! -e "$TO" ]; then
     ln -fs "$FROM" "$TO"
-    print_success "Symlink: $FROM → $TO"
+    print_success "Successfully symlinked"
   elif [ "$(readlink "$TO")" == "$FROM" ]; then
-    print_success "Already symlinked: ($FROM → $TO)"
+    print_success "Already symlinked"
   else
-    ask_for_confirmation "($TO) already exists, overwrite it?"
+    ask_for_confirmation "$(basename $TO) already exists, overwrite it?"
 
     if answer_is_yes; then
       rm -rf "$TO"
       ln -fs "$FROM" "$TO"
-      print_success "Symlink: ($FROM → $TO)"
+      print_success "Successfully symlinked"
     else
-      print_info "Skipping symlink: ($FROM → $TO)"
+      print_info "Skipping symlink $(basename $FROM)"
     fi
   fi
 }
 
-symlinkDot() {
+symlink_dot() {
   args=($@)
 
   local i=''
@@ -135,7 +78,7 @@ symlinkDot() {
     FROM="$(pwd)/$i"
     TO="$HOME/.$(printf "%s" "$i" | cut -f 1 -d '.' | sed "s/.*\/\(.*\)/\1/g")"
 
-    symlinkFromTo $FROM $TO
+    symlink_from_to $FROM $TO
   done
 
   unset args
@@ -161,4 +104,8 @@ insert_to_file_after_line_number() {
 
 uncomment_line() {
   sed -i '' "/$1/s/^#//g" $2
+}
+
+prepend_string_to_file () {
+  echo "$1" | cat - "$2" > "$2.tmp" && mv "$2.tmp" "$2"
 }

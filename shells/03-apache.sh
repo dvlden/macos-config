@@ -28,6 +28,8 @@ then
 
   uncomment_line 'httpd-vhosts' "$CONFIG"
 
+  uncomment_line 'ServerName www.example.com:8080' "$CONFIG"
+
   modify_line 'Listen 8080' "Listen 80" "$CONFIG"
 
   modify_line 'User _www' "User $USER" "$CONFIG"
@@ -35,8 +37,6 @@ then
   modify_line 'Group _www' 'Group staff' "$CONFIG"
 
   modify_line '/usr/local/var/www' "/Users/$USER/Sites" "$CONFIG"
-
-  uncomment_line 'ServerName www.example.com:8080' "$CONFIG"
 
   modify_line 'ServerName www.example.com:8080' "ServerName localhost" "$CONFIG"
 

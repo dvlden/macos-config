@@ -1,6 +1,6 @@
 [user]
-  name = Nenad Novakovic
-  email = n.dvlden@gmail.com
+	name = Nenad Novaković
+	email = n.dvlden@gmail.com
 [credential]
   helper = osxkeychain
 [core]

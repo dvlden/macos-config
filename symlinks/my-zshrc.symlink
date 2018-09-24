@@ -1,5 +1,5 @@
 # Load extensions
-source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+# source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Activate plugins
@@ -17,7 +17,7 @@ PATH=$COMPOSER:$PATH
 PATH=$LOCAL_NODE_BIN:$PATH
 
 # Set default editor
-EDITOR='subl -w'
+export EDITOR='subl -w'
 
 # Load my aliases
 if [ -f ~/.aliases ]; then

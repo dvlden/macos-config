@@ -1,25 +1,20 @@
-# OCD HITS: EVERYTHING SORTED IN ALPHABETICAL ORDER!
-
 # Sources
 tap 'buo/cask-upgrade'
-tap 'caskroom/cask'
-tap 'caskroom/versions'
-tap 'homebrew/bundle'
-tap 'homebrew/core'
 
 # Utilities
+brew 'brotli'
 brew 'composer'
 brew 'dnsmasq'
 brew 'git'
 brew 'httpd'
+brew 'mackup'
 brew 'mas'
 brew 'mysql'
 brew 'node'
-brew 'php@7.2'
-# brew 'python3'
+brew 'php'
+brew 'python'
 brew 'redis'
-# brew 'sqlite'
-brew 'yarn'
+brew 'wget'
 brew 'zsh'
 brew 'zsh-autosuggestions'
 brew 'zsh-completions'
@@ -27,44 +22,28 @@ brew 'zsh-syntax-highlighting'
 
 # Apps from "Web"
 cask '1password'
+cask 'adguard'
 cask 'adobe-creative-cloud'
 cask 'alfred'
-cask 'authy'
 cask 'bartender'
-cask 'droplr'
-# cask 'expressvpn'
-# cask 'firefox'
+cask 'deezer'
+cask 'figma'
 cask 'flume'
-# cask 'gitkraken'
+cask 'insomnia'
 cask 'google-backup-and-sync'
 cask 'google-chrome'
-cask 'iterm2-nightly'
-cask 'keepingyouawake'
-cask 'lunar'
-# cask 'opera'
-cask 'postman'
-# cask 'razer-synapse'
-cask 'screenflow'
-cask 'sequel-pro'
+cask 'iterm2'
+cask 'phpstorm'
 cask 'sip'
 cask 'skype'
-# cask 'slack'
-cask 'spotify'
-cask 'sublime-text-dev'
-# cask 'teamviewer'
-# cask 'timing'
-# cask 'transmission'
-cask 'transmit'
-# cask 'vlc'
+cask 'slack'
+cask 'sublime-text'
+cask 'tableplus'
+cask 'telegram'
+cask 'webstorm'
 
 # Apps from "App Store"
-# mas 'Affinity Photo', id: 824183456
-# mas 'Affinity Designer', id: 824171161
-mas 'Airmail 3', id: 918858936
 mas 'Bear', id: 1091189122
-mas 'Folx GO', id: 736584830
-mas 'iA Writer', id: 775737590
 mas 'Magnet', id: 441258766
-mas 'Medis', id: 1063631769
-mas 'Paste', id: 967805235
+mas 'Spark', id: 1176895641
 mas 'WinZip', id: 583827028

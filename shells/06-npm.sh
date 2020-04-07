@@ -4,8 +4,8 @@ echo "=> NPM"
 
 
 declare -a PACKAGES=(
+  '@vue/cli'
   'npm-check-updates'
-  'vue-cli'
 )
 
 for PACKAGE in "${PACKAGES[@]}"

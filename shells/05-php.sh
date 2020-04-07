@@ -3,7 +3,7 @@
 echo "=> Php"
 
 
-DIR=$(echo /usr/local/etc/php/7.2)
+DIR=$(echo /usr/local/etc/php/*)
 CONFIG=$(echo $DIR/php.ini)
 TIMEZONE=$(echo $(cut -d ":" -f 2 <<< $(sudo systemsetup -gettimezone) | xargs))
 

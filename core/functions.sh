@@ -23,7 +23,7 @@ ask_for_sudo() {
     sudo -n true
     sleep 60
     kill -0 "$$" || exit
-  done &> /dev/null &
+  done 2> /dev/null &
 }
 
 print_info() {
@@ -67,22 +67,22 @@ symlink_from_to() {
   fi
 }
 
-symlink_dot() {
-  args=($@)
+# symlink_dot() {
+#   args=($@)
 
-  local i=''
-  local FROM=''
-  local TO=''
+#   local i=''
+#   local FROM=''
+#   local TO=''
 
-  for i in "${args[@]}"; do
-    FROM="$(pwd)/$i"
-    TO="$HOME/.$(printf "%s" "$i" | cut -f 1 -d '.' | sed "s/.*\/\(.*\)/\1/g")"
+#   for i in "${args[@]}"; do
+#     FROM="$(pwd)/$i"
+#     TO="$HOME/.$(printf "%s" "$i" | cut -f 1 -d '.' | sed "s/.*\/\(.*\)/\1/g")"
 
-    symlink_from_to $FROM $TO
-  done
+#     symlink_from_to $FROM $TO
+#   done
 
-  unset args
-}
+#   unset args
+# }
 
 modify_file() {
   if ! grep -q "$2" "$3"; then

@@ -44,10 +44,6 @@ do
   sh $SHELL
 done
 
-print_info "Symlinking files..."
-declare -a SYMLINKS=(`ls $ROOT_DIR/symlinks | sed 's/^/symlinks\//'`)
-symlink_dot ${SYMLINKS[@]}
-
 sh "$ROOT_DIR/core/brew-services.sh"
 
 exec zsh

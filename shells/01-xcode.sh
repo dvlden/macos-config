@@ -2,6 +2,10 @@
 
 echo "=> X Code"
 
+# Sane people just run:
+# xcode-select --install
+# but that requires manual confrimation, so won't work for us.
+
 if ! xcode-select --print-path &> /dev/null; then
   print_info "Installing..."
 

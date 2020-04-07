@@ -13,16 +13,16 @@ else
 fi
 
 
-print_info "Configuring..."
+# print_info "Configuring..."
 
-if ! grep -Fxq "$CONFIGURED_MESSAGE" "$HOME/.zshrc"
-then
-  echo "
-$CONFIGURED_MESSAGE
-if [ -f ~/.my-zshrc ]; then
-  . ~/.my-zshrc
-fi" >> "$HOME/.zshrc"
-  print_success "Completed..."
-else
-  print_success "Skipping..."
-fi
+# if ! grep -Fxq "$CONFIGURED_MESSAGE" "$HOME/.zshrc"
+# then
+#   echo "
+# $CONFIGURED_MESSAGE
+# if [ -f ~/.my-zshrc ]; then
+#   . ~/.my-zshrc
+# fi" >> "$HOME/.zshrc"
+#   print_success "Completed..."
+# else
+#   print_success "Skipping..."
+# fi

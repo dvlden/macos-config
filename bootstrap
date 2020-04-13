@@ -17,7 +17,6 @@ export -f print_info
 export -f print_success
 export -f print_error
 export -f symlink_from_to
-export -f symlink_dot
 export -f modify_file
 export -f modify_line
 export -f insert_to_file_after_line_number

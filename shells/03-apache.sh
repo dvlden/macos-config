@@ -8,14 +8,13 @@ CONFIG=$(echo $DIR/httpd.conf)
 CONFIG_VHOSTS=$(echo $DIR/extra/httpd-vhosts.conf)
 
 
-sudo apachectl stop >/dev/null
-sudo launchctl unload -w /System/Library/LaunchDaemons/org.apache.httpd.plist 2>/dev/null
-
-
 print_info "Configuring core..."
 
 if ! grep -Fxq "$CONFIGURED_MESSAGE" "$CONFIG"
 then
+  sudo apachectl stop >/dev/null
+  sudo launchctl unload -w /System/Library/LaunchDaemons/org.apache.httpd.plist 2>/dev/null
+
   prepend_string_to_file "$CONFIGURED_MESSAGE" "$CONFIG"
 
   modify_file 'LoadModule rewrite_module' \
@@ -40,12 +39,12 @@ then
 
   modify_line '/usr/local/var/www' "/Users/$USER/Sites" "$CONFIG"
 
-  sed -e '270s/AllowOverride None/AllowOverride All/' "$CONFIG" | tee "$CONFIG"
-
   modify_line 'DirectoryIndex index.html' 'DirectoryIndex index.php index.html' "$CONFIG"
 
   PHP_APP_HANDLER='<FilesMatch \\.php$> SetHandler application/x-httpd-php </FilesMatch>'
-  insert_to_file_after_line_number "$PHP_APP_HANDLER" '285' "$CONFIG"
+  insert_to_file_after_line_number "$PHP_APP_HANDLER" '286' "$CONFIG"
+
+  sed -i '' '271s/.*/AllowOverride All/' "$CONFIG"
 
   print_success "Completed..."
 else

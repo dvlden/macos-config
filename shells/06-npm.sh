@@ -14,7 +14,7 @@ do
 
   if ! npm list -g --depth=0 | grep -q $PACKAGE
   then
-    npm install -g $PACKAGE
+    npm install -g --silent $PACKAGE
     print_success "Completed..."
   else
     print_success "Skipping..."

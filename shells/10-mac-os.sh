@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
 
-# Borrowed some from: https://github.com/mathiasbynens/dotfiles/blob/master/.macos
+# Automatic Daily Boot (when charging)
+sudo pmset repeat wakeorpoweron MTWRFSU 08:00:00
+
+# Borrowed some from:
+# https://github.com/mathiasbynens/dotfiles/blob/master/.macos
 
 ###############################################################################
 # General UI/UX                                                               #

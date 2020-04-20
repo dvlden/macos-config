@@ -9,6 +9,8 @@ TIMEZONE=$(echo $(cut -d ":" -f 2 <<< $(sudo systemsetup -gettimezone) | xargs))
 
 
 mkdir -p ~/Sites
+rm /usr/local/Cellar/php/7.4.4/pecl
+mkdir -p /usr/local/lib/php/pecl
 
 
 print_info "Making a file to display phpinfo..."
